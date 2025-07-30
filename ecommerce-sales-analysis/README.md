@@ -22,6 +22,7 @@ This project analyzes sales data from an e-commerce store using Python. It demon
 ## Dataset
 
 - Source: [Kaggle E-Commerce Sales Dataset](https://www.kaggle.com/datasets)
+- Example Dataset: [Unlock Profits with E-Commerce Sales Data](https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data/data)
 - Format: CSV
 - Columns: Order ID, Product, Category, Quantity Ordered, Price Each, Order Date, etc.
 

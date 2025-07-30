@@ -3,20 +3,22 @@ import seaborn as sns
 import os
 
 def sales_trend(df, output_dir):
-    """Plot monthly sales trend."""
-    monthly_sales = df.groupby(['Year', 'Month'])['Total Sales'].sum().reset_index()
+    """Plot monthly order count trend for Amazon Sale Report."""
+    monthly_orders = df.groupby(['Year', 'Month'])['Order ID'].count().reset_index()
     plt.figure(figsize=(10,6))
-    sns.lineplot(data=monthly_sales, x='Month', y='Total Sales', hue='Year', marker='o')
-    plt.title('Monthly Sales Trend')
-    plt.savefig(os.path.join(output_dir, 'monthly_sales_trend.png'))
+    sns.lineplot(data=monthly_orders, x='Month', y='Order ID', hue='Year', marker='o')
+    plt.title('Monthly Order Count Trend')
+    plt.ylabel('Number of Orders')
+    plt.savefig(os.path.join(output_dir, 'monthly_order_count_trend.png'))
     plt.close()
 
 def category_sales(df, output_dir):
-    """Plot sales by product category."""
-    category_sales = df.groupby('Category')['Total Sales'].sum().sort_values(ascending=False)
+    """Plot order count by product category for Amazon Sale Report."""
+    category_orders = df.groupby('Category')['Order ID'].count().sort_values(ascending=False)
     plt.figure(figsize=(10,6))
-    sns.barplot(x=category_sales.index, y=category_sales.values)
-    plt.title('Sales by Product Category')
+    sns.barplot(x=category_orders.index, y=category_orders.values)
+    plt.title('Order Count by Product Category')
+    plt.ylabel('Number of Orders')
     plt.xticks(rotation=45)
-    plt.savefig(os.path.join(output_dir, 'category_sales.png'))
+    plt.savefig(os.path.join(output_dir, 'category_order_count.png'))
     plt.close()
