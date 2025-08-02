@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Databases
+*.db
+
+# Environment
+.env
+
+# Jupyter Notebooks
+*.ipynb_checkpoints/
+
+# Output
+output/
+
+# General
+*.log
+*.sqlite3
+
+# Ignore virtual environments
+venv/
+ENV/
+
+# Ignore system files
+Thumbs.db
+
+# Ignore test coverage
+htmlcov/
+.coverage
+
+# Ignore build
+build/
+dist/
+*.egg-info/
+
+# Ignore node modules (if any)
+node_modules/
